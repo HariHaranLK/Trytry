@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Spotify Music Recommender</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Currently Playing:</h2>
+            <p>{{ track_name }} by {{ artists }} from the album {{ album_name }}</p>
+            <p>Duration: {{ duration_ms }} milliseconds</p>
+            <p>Release Date: {{ release_date }}</p>
+        </section>
+
+        <section>
+            <h2>Recommendations:</h2>
+            <ul>
+                {% for recommendation in recommendations['tracks'] %}
+                    <li>
+                        <div class="song-details">
+                            <img src="{{ recommendation['album']['images'][0]['url'] }}" alt="Album Cover">
+                            <div class="song-info">
+                                <a href="{{ recommendation['uri'] }}" target="_blank">
+                                    {{ recommendation['name'] }} by
+                                    {% for artist in recommendation['artists'] %}
+                                        {{ artist['name'] }}{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                    from the album {{ recommendation['album']['name'] }}
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; done By Hari Haran L K.</p>
+    </footer>
+</body>
+</html>

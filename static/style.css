@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #282828;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #D62728;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #1DB954;
+}
+
+section {
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.song-info {
+    color: #fff;
+}
